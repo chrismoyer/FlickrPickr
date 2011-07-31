@@ -103,6 +103,7 @@
 		DDBBD10313DE279B00AAEBBA /* PlacePhotosTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlacePhotosTableViewController.m; sourceTree = "<group>"; };
 		DDBBD10513DE354000AAEBBA /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
 		DDBBD10613DE354000AAEBBA /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
+		DDDA8F9913E5B2C500D5261B /* FlickrAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrAPIKey.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +241,7 @@
 		DDBBD0D813DE06F000AAEBBA /* FlickrFetcher */ = {
 			isa = PBXGroup;
 			children = (
+				DDDA8F9913E5B2C500D5261B /* FlickrAPIKey.h */,
 				DDBBD0DA13DE06F000AAEBBA /* FlickrFetcher.h */,
 				DDBBD0DB13DE06F000AAEBBA /* FlickrFetcher.m */,
 				DDBBD0DC13DE06F000AAEBBA /* JSON */,
