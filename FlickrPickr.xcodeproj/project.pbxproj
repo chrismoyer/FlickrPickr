@@ -78,7 +78,6 @@
 		DDBBD0CA13DE06B000AAEBBA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DDBBD0CC13DE06B000AAEBBA /* FlickrPickrTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlickrPickrTests.h; sourceTree = "<group>"; };
 		DDBBD0CE13DE06B000AAEBBA /* FlickrPickrTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlickrPickrTests.m; sourceTree = "<group>"; };
-		DDBBD0D913DE06F000AAEBBA /* FlickrAPIKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrAPIKey.h; sourceTree = "<group>"; };
 		DDBBD0DA13DE06F000AAEBBA /* FlickrFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlickrFetcher.h; sourceTree = "<group>"; };
 		DDBBD0DB13DE06F000AAEBBA /* FlickrFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlickrFetcher.m; sourceTree = "<group>"; };
 		DDBBD0DD13DE06F000AAEBBA /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
@@ -241,7 +240,6 @@
 		DDBBD0D813DE06F000AAEBBA /* FlickrFetcher */ = {
 			isa = PBXGroup;
 			children = (
-				DDBBD0D913DE06F000AAEBBA /* FlickrAPIKey.h */,
 				DDBBD0DA13DE06F000AAEBBA /* FlickrFetcher.h */,
 				DDBBD0DB13DE06F000AAEBBA /* FlickrFetcher.m */,
 				DDBBD0DC13DE06F000AAEBBA /* JSON */,
