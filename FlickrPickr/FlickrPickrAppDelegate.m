@@ -7,6 +7,9 @@
 //
 
 #import "FlickrPickrAppDelegate.h"
+#import "PlacesTableViewController.h"
+#import "RecentTableViewController.h"
+
 
 @implementation FlickrPickrAppDelegate
 
@@ -14,7 +17,26 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    UINavigationController *nav1 = [[UINavigationController alloc] init];
+    PlacesTableViewController *ptvc = [[PlacesTableViewController alloc] init];
+    ptvc.title = @"Places";
+    [nav1 pushViewController:ptvc animated:NO];
+
+    UINavigationController *nav2 = [[UINavigationController alloc] init];
+    RecentTableViewController *rtvc = [[RecentTableViewController alloc] init];
+    rtvc.title = @"Recent";
+    [nav2 pushViewController:rtvc animated:NO];
+    
+    UITabBarController *tbc = [[UITabBarController alloc] init];
+    tbc.viewControllers = [NSArray arrayWithObjects:nav1, nav2, nil];
+    tabBarController = tbc;
+    
+    [nav1 release];
+    [nav2 release];
+    [ptvc release];
+    [rtvc release];
+    
+    [self.window addSubview:tbc.view];
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -60,6 +82,7 @@
 
 - (void)dealloc
 {
+    [tabBarController release];
     [_window release];
     [super dealloc];
 }
