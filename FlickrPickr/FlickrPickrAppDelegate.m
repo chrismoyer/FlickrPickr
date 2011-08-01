@@ -15,6 +15,11 @@
 
 @synthesize window = _window;
 
+- (BOOL)iPad
+{
+    return (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad);
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     UINavigationController *nav1 = [[UINavigationController alloc] init];

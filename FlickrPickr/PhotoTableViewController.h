@@ -15,4 +15,5 @@
 
 @property (retain) NSArray *photos;
 
+- (NSDictionary *)photoForIndexPath:(NSIndexPath *)indexPath;
 @end

@@ -134,6 +134,11 @@
     return description;    
 }
 
+- (NSDictionary *)photoForIndexPath:(NSIndexPath *)indexPath
+{
+    NSDictionary *photo = [photos objectAtIndex:indexPath.row];
+    return photo;    
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -144,7 +149,7 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
     }
     
-    NSDictionary *photo = [photos objectAtIndex:indexPath.row];
+    NSDictionary *photo = [self photoForIndexPath:indexPath];
     
     cell.textLabel.text = [self photoTitle:photo];
     cell.detailTextLabel.text = [self photoDescription:photo];
@@ -196,7 +201,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDictionary *photo = [photos objectAtIndex:indexPath.row];
+    NSDictionary *photo = [self photoForIndexPath:indexPath];
     
     PhotoViewController *pview = [[PhotoViewController alloc] init];
     pview.title = [self photoTitle:photo];

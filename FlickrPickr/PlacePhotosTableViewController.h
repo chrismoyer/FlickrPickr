@@ -10,5 +10,9 @@
 #import "PhotoTableViewController.h"
 
 @interface PlacePhotosTableViewController : PhotoTableViewController
+{
+    NSMutableDictionary *photosBySection;
+    NSMutableArray *photoSections;
+}
 
 @end

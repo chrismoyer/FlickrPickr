@@ -49,6 +49,16 @@
     [defaults synchronize];
 }
 
++ (void)removePhotoAtIndex:(NSInteger)index
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSMutableArray *photos = [defaults mutableArrayValueForKey:@"recent_photos"];
+    
+    [photos removeObjectAtIndex:index];
+    [defaults setValue:photos forKey:@"recent_photos"];
+    [defaults synchronize];   
+}
+
 + (NSArray *)photoList
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];

@@ -12,5 +12,6 @@
 
 + (void)addPhoto:(NSDictionary *)photo;
 + (NSArray *)photoList;
++ (void)removePhotoAtIndex:(NSInteger)index;
 
 @end
