@@ -57,6 +57,8 @@
     
     NSArray *sortedPlaces = [[FlickrFetcher topPlaces] sortedArrayUsingDescriptors:[NSArray arrayWithObject:[NSSortDescriptor sortDescriptorWithKey:@"_content" ascending:YES]]];
     
+    NSLog(@"sorted places received from Flickr: %@", sortedPlaces);
+    
     [self loadPlaces:sortedPlaces];
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;

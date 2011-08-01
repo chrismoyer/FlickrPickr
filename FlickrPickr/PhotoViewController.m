@@ -61,6 +61,7 @@
 	sv.contentSize = i.size;
 	[sv addSubview:self.imageView];
     
+    
 	sv.bounces = NO;
 	sv.minimumZoomScale = 0.1;
 	sv.maximumZoomScale = 6.0;
@@ -75,13 +76,15 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    // Set up the default zoom and origin
+    
     CGRect viewRect = scrollView.bounds;
     
     float screenAspect = viewRect.size.width / viewRect.size.height;
     float imageAspect = image.size.width/image.size.height;
     
-    NSLog(@"Image Size %fx%f with ar %f", image.size.width, image.size.height, imageAspect);
-    NSLog(@"Frame Size %fx%f with ar %f", viewRect.size.width, viewRect.size.height, screenAspect);
+//    NSLog(@"Image Size %fx%f with ar %f", image.size.width, image.size.height, imageAspect);
+//    NSLog(@"Frame Size %fx%f with ar %f", viewRect.size.width, viewRect.size.height, screenAspect);
     
     CGRect zoomRect;
     
@@ -94,10 +97,18 @@
     zoomRect.origin.x = (image.size.width - zoomRect.size.width) / 2;
     zoomRect.origin.y = (image.size.height - zoomRect.size.height) / 2;
     
-    NSLog(@"Zoomrect %f,%f - %fx%f with ar %f", zoomRect.origin.x, zoomRect.origin.y, 
-          zoomRect.size.width, zoomRect.size.height, zoomRect.size.width / zoomRect.size.height);
-    
+//    NSLog(@"Zoomrect %f,%f - %fx%f with ar %f", zoomRect.origin.x, zoomRect.origin.y, 
+//          zoomRect.size.width, zoomRect.size.height, zoomRect.size.width / zoomRect.size.height);
+
     [scrollView zoomToRect:zoomRect animated:NO];
+    
+    // Set the minimum zoom
+    
+    float xscale = viewRect.size.width / image.size.width;
+    float yscale = viewRect.size.height / image.size.height;
+    
+    float minscale = (xscale < yscale ? xscale : yscale);
+    self.scrollView.minimumZoomScale = minscale;
 }
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)sender
@@ -123,9 +134,7 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait ||
-            interfaceOrientation == UIInterfaceOrientationLandscapeLeft ||
-            interfaceOrientation == UIInterfaceOrientationLandscapeRight);
+    return YES;
 }
 
 @end

@@ -10,6 +10,12 @@
 #import "PlacesTableViewController.h"
 #import "RecentTableViewController.h"
 
+@interface FlickrPickrAppDelegate()
+
+@property (readonly) BOOL iPad;
+
+@end
+
 
 @implementation FlickrPickrAppDelegate
 
@@ -35,6 +41,14 @@
     UITabBarController *tbc = [[UITabBarController alloc] init];
     tbc.viewControllers = [NSArray arrayWithObjects:nav1, nav2, nil];
     tabBarController = tbc;
+    
+//    if (self.iPad) {
+//        UISplitViewController *svc = [[UISplitViewController alloc] init];
+//        UINavigationController *rightNav = [[UINavigationController alloc] init];
+//        rightNav.navigationBar.barStyle = UIBarStyleBlackOpaque;
+//        
+//        
+//    }
     
     [nav1 release];
     [nav2 release];
